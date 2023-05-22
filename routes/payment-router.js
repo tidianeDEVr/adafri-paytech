@@ -18,9 +18,6 @@ router.get('/success', async(req, res) => {
 router.post("/request-payment", async(req, res) => {
     const hideLibelleIdClient = 'SES21qHsQEqZXMxQ9zgHy'
     const hidePaymentAmount = 'U2FsdGVkX18ZUVvShF'
-    if (!service.checkIsAllParamsExist(req.body)) {
-        return res.status(401).send('Missing data')
-    }
     var data = JSON.stringify({
         "item_name": "Recharge de compte",
         "item_price": req.query.amount,
